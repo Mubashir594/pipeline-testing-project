@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pipeline-testing-project-service
+  labels:
+    app: pipeline-testing-project
+spec:
+  type: LoadBalancer
+  selector:
+    app: pipeline-testing-project
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8000
